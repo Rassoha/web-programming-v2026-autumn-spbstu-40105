@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { createRoot } from "react-dom/client";
-import "./styles.css";
+import React, {useState} from 'react';
+import {createRoot} from 'react-dom/client';
+import './styles.css';
 
 const MOVIES = [
-  { id: 1, title: "Пластилин колец", genre: "фантастика", theme: "stellar" },
-  { id: 2, title: "Атака куриных зомби", genre: "драма", theme: "ocean" },
-  { id: 3, title: "Молчание ветчины", genre: "триллер", theme: "noir" },
-  { id: 4, title: "Финиста", genre: "боевик", theme: "steel" },
+  {id: 1, title: 'Звёздный десант', genre: 'фантастика', theme: 'stellar'},
+  {id: 2, title: 'Тихий океан', genre: 'драма', theme: 'ocean'},
+  {id: 3, title: 'Городские тени', genre: 'триллер', theme: 'noir'},
+  {id: 4, title: 'Стальная птица', genre: 'боевик', theme: 'steel'},
 ];
 
 function App() {
@@ -20,19 +20,19 @@ function App() {
 
     const nextErrors = {};
 
-    const name = formData.get("name") || "";
+    const name = formData.get('name') || '';
     if (name.trim().length < 2) {
-      nextErrors.name = "Имя должно быть не менее 2 символов";
+      nextErrors.name = 'Имя должно быть не менее 2 символов';
     }
 
-    const email = formData.get("email") || "";
+    const email = formData.get('email') || '';
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      nextErrors.email = "Введите корректный email";
+      nextErrors.email = 'Введите корректный email';
     }
 
-    const phone = formData.get("phone") || "";
+    const phone = formData.get('phone') || '';
     if (!/^\+\d+$/.test(phone)) {
-      nextErrors.phone = "Телефон: цифры и символ + в начале";
+      nextErrors.phone = 'Телефон: цифры и символ + в начале';
     }
 
     setErrors(nextErrors);
@@ -58,13 +58,13 @@ function App() {
             type="button"
             className={
               selectedMovie.id === movie.id
-                ? "movie-card selected"
-                : "movie-card"
+                ? 'movie-card selected'
+                : 'movie-card'
             }
             data-testid="movie-card"
             onClick={() => chooseMovie(movie)}
           >
-            <span className={`poster poster--${movie.theme}`}>
+            <span className={`poster poster-${movie.theme}`}>
               {movie.genre}
             </span>
             <span className="movie-title">{movie.title}</span>

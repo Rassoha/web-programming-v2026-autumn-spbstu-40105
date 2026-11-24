@@ -60,19 +60,19 @@ body {
   text-transform: uppercase;
 }
 
-.poster--stellar {
+.poster-stellar {
   background: linear-gradient(135deg, #2c3e50, #3498db);
 }
 
-.poster--ocean {
+.poster-ocean {
   background: linear-gradient(135deg, #16a085, #2980b9);
 }
 
-.poster--noir {
+.poster-noir {
   background: linear-gradient(135deg, #34495e, #5d6d7e);
 }
 
-.poster--steel {
+.poster-steel {
   background: linear-gradient(135deg, #7f8c8d, #34495e);
 }
 
