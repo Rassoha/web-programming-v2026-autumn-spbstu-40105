@@ -15,7 +15,7 @@ function loadProducts() {
       return [];
     }
     return JSON.parse(saved).map(
-      (p) => new Product(p.id, p.name, p.price, p.categories),
+      (p) => new Product(p.id, p.name, p.categories, p.price),
     );
   } catch (error) {
     console.error('Не удалось прочитать localStorage', error);
@@ -95,7 +95,7 @@ formElement.addEventListener('submit', (event) => {
     .map((c) => c.trim())
     .filter((c) => c !== '');
 
-  addProductAsync(new Product(id, name, price, categories)).then(() => {
+  addProductAsync(new Product(id, name, categories, price)).then(() => {
     formElement.reset();
   });
 });
